@@ -2,7 +2,7 @@
 #define ARCDPS_H
 
 #include <stdint.h>
-#include <Windows.h>
+#include <windows.h>
 
 namespace ArcDPS
 {
