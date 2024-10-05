@@ -2,7 +2,7 @@
 #define ARCDPS_H
 
 #include <stdint.h>
-#include <Windows.h>
+#include <windows.h>
 
 namespace ArcDPS
 {
@@ -43,7 +43,7 @@ namespace ArcDPS
 		//     called before ImGui::Render.
 		//     not_charsel_or_loading and hide_if_combat_or_ooc may be used to match arcdps window visibility.
 		
-		void* ImGuiOptions // void fn()
+		void* ImGuiOptions; // void fn()
 		//     called when drawing module's options tab.
 		
 		void* CombatLocalCallback; // void fn(cbtevent* ev, ag* src, ag* dst, char* skillname, uint64_t id, uint64_t revision)
@@ -427,7 +427,7 @@ namespace ArcDPS
 		// realtime: no
 
 		CBTS_UNKNOWN // unknown/unsupported type newer than this list maybe
-	}
+	};
 
 	/* is friend/foe */
 	enum EIsFriendFoe
