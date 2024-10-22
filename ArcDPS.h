@@ -4,8 +4,10 @@
 #include <stdint.h>
 #include <windows.h>
 
+#ifdef __cplusplus
 namespace ArcDPS
 {
+#endif 
 	/* arcdps export table */
 	struct Exports
 	{
@@ -55,7 +57,7 @@ namespace ArcDPS
 		
 		void* ImGuiWindows; // void fn(char* windowname)
 		//     called during options window list, before the checkbox of 'window' is drawn.
-	};
+	} PluginInfo;
 
 	/* combat event - see evtc docs for details, revision param in combat cb is equivalent of revision byte header */
 	struct CombatEvent
@@ -524,8 +526,6 @@ namespace ArcDPS
 	static void* LogFile;
 	static void* LogArc;
 
-	static Exports PluginInfo;
-
 	static void LogToFile(char* str) /* log to arcdps.log, thread/async safe */
 	{
 		size_t(*log)(char*) = (size_t(*)(char*))LogFile;
@@ -544,6 +544,8 @@ namespace ArcDPS
 		LogToArc(str);
 		return;
 	}
+#ifdef __cplusplus
 }
+#endif
 
 #endif
