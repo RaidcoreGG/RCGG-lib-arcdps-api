@@ -9,7 +9,7 @@ namespace ArcDPS
 {
 #endif 
 	/* arcdps export table */
-	struct Exports
+	typedef struct Exports
 	{
 		uintptr_t   Size;         /* sizeof(arcdps_exports) */
 		uint32_t    Signature;    /* pick a number between 0 and uint32 max that is not used by any other some_module */
